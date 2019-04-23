@@ -1,19 +1,29 @@
 {
   "defaultSeverity": "warning",
   "extends": [
-    "tslint:recommended"
+    "tslint:recommended",
+    "tslint-config-standard"
   ],
   "linterOptions": {
     "exclude": [
-      "node_modules/**"
+      "node_modules/**",
+      "babel.config.js"
     ]
   },
+  "jsRules": {
+    "no-unused-expression": true
+  },
   "rules": {
+    "space-within-parens": [ true, 0 ],
+    "no-console": true,
+    "deprecation": false, // Disabled error: The 'deprecation' rule threw an error in '/home/yesworld/work/portfolio/src/views/Home.vue'
     "quotemark": [true, "single"],
     "indent": [true, "spaces", 2],
     "interface-name": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "no-consecutive-blank-lines": false
+    "no-consecutive-blank-lines": false,
+    "semicolon": [true, "never"],
+    "no-inferrable-types": true
   }
 }
