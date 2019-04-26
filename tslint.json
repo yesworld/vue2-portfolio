@@ -14,7 +14,7 @@
     "no-unused-expression": true
   },
   "rules": {
-    "space-within-parens": [ true, 0 ],
+    "space-within-parens": false,
     "no-console": true,
     "deprecation": false, // Disabled error: The 'deprecation' rule threw an error in '/home/yesworld/work/portfolio/src/views/Home.vue'
     "quotemark": [true, "single"],
