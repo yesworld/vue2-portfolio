@@ -67,16 +67,18 @@
       left: 0;
       margin-left: -7px;
 
-      .stars:before{
-        content:"";
-        position:absolute;
-        height:3px;
-        width:3px;
-        top:-2px;
-        background:white;
-        box-shadow: stars(500, 1800);
-        border-radius:100px;
-        display: block;
+      .stars{
+        &:before{
+          content:"";
+          position:absolute;
+          height:3px;
+          width:3px;
+          top:-2px;
+          background:white;
+          box-shadow: stars(500, 1800);
+          border-radius:100px;
+          display: block;
+        }
       }
 
       .image{

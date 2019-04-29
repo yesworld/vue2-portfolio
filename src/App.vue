@@ -1,9 +1,9 @@
 <template lang="pug">
-  div
-    //TopMenu
+  v-app(dark)
 
-    Parallax(:isDisable="true")
-      router-view
+    v-content
+      Parallax(:isDisable="true")
+        router-view
 </template>
 
 <script lang="ts">
@@ -33,14 +33,14 @@
 
     -webkit-font-smoothing: antialiased;
     /*background-color: #FEDCC8;*/
-    background: radial-gradient(ellipse at bottom, #fedcc8 50%, #435C7A 150%);
     color: #f9ffee;
     line-height: 1.6;
     font-weight: 300;
     font-size: 22px;
   }
 
-  h1, h2, h3, h4, h5 {
-    color: #efbb35;
+  .theme--dark.application{
+    /*background: radial-gradient(ellipse at bottom, #fedcc8 50%, #2c3669 100%);*/
+    background: linear-gradient(#0D47A1 0%, #90CAF9 51%);
   }
 </style>
