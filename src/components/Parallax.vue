@@ -1,5 +1,7 @@
 <template lang="pug">
-  div.parallax
+  div.parallax(:class="{disabled: isDisable}")
+    div.layer
+      .stars
     div.layer.l_1
       div.image
     div.layer.l_2
@@ -19,19 +21,43 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator'
+  import { Vue, Prop, Component } from 'vue-property-decorator'
 
   @Component
-  export default class Parallax extends Vue {}
+  export default class Parallax extends Vue {
+    @Prop([String, Boolean])
+    public readonly isDisable!: boolean | string
+
+    public created () {
+      console.log(1, this.isDisable)
+    }
+
+    public mounted () {
+      console.log(2, this.isDisable)
+    }
+  }
 </script>
 
 <style lang="scss">
+
+  @function alphaRandom(){
+    @return random(1000)*.001;
+  }
+  @function stars($s, $max-area, $min-area : 0, $star-size : 0){
+    $stars : #{$min-area + random($max-area)}px #{$min-area + random($max-area)}px 0 #{$star-size}px rgba(255,255,255, alphaRandom());
+
+    @for $i from 1 to $s{
+      $stars: '#{$stars} , #{$min-area + random($max-area)}px #{$min-area + random($max-area)}px 0 #{$star-size}px rgba(255,255,255, #{alphaRandom()})'
+    }
+    @return unquote($stars);
+  }
+
   .parallax {
     perspective: 100px;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    z-index: -1;
+    z-index: -1; /* The magic of fixed parallax header*/
 
     .layer{
       position: absolute;
@@ -40,6 +66,18 @@
       bottom: 0;
       left: 0;
       margin-left: -7px;
+
+      .stars:before{
+        content:"";
+        position:absolute;
+        height:3px;
+        width:3px;
+        top:-2px;
+        background:white;
+        box-shadow: stars(500, 1800);
+        border-radius:100px;
+        display: block;
+      }
 
       .image{
         display: block;
@@ -83,6 +121,10 @@
         width: 600px;
         margin: 0 auto;
       }
+    }
+
+    &.disabled .layer {
+      transform: none !important;
     }
   }
 

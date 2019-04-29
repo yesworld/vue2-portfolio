@@ -1,8 +1,8 @@
 <template lang="pug">
   div
-    TopMenu
+    //TopMenu
 
-    Parallax
+    Parallax(:isDisable="true")
       router-view
 </template>
 
@@ -27,9 +27,20 @@
   }
 
   body {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    background-color: #FEDCC8;
-    color: #efbb35;
     position: relative;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    /*background-color: #FEDCC8;*/
+    background: radial-gradient(ellipse at bottom, #fedcc8 50%, #435C7A 150%);
+    color: #f9ffee;
+    line-height: 1.6;
+    font-weight: 300;
+    font-size: 22px;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: #efbb35;
   }
 </style>
