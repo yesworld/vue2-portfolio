@@ -1,18 +1,41 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<template lang="pug">
+  v-container(fill-height)
+    v-layout(
+    text-xs-center wrap align-center justify-center
+    )
+      v-flex(xs12 md6)
+        h3 {{ scrollTop }}
+        p(v-scroll="handleScroll" style="opacity: 0;") efwef f fwfwf wfwe fw efwef f fwfwf wfwe fw efwef f fwfwf wfwe fw
+      v-flex(xs12 md6)
+        p efwef f fwfwf wfwe fw efwef f fwfwf wfwe fw efwef f fwfwf wfwe fw
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
+import scroll from '../scroll-directive'
 
 @Component({
   components: {
-    HelloWorld
+  },
+  directives: {
+    scroll
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+
+  public handleScroll (evt: any, el: any): boolean {
+
+    let scrollX: number = evt.currentTarget.scrollTop
+    let topElement = el.offsetTop + el.offsetHeight
+
+    if (scrollX > topElement) {
+      el.setAttribute(
+          'style',
+          'opacity: 1; transform: translate3d(0, -10px, 0)'
+      )
+    }
+
+    return scrollX > topElement
+  }
+}
 </script>

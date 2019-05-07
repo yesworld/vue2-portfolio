@@ -11,6 +11,14 @@
           contain
           height="200"
         ></v-img>
+
+        <v-img
+          :src="require('../assets/logo.png')"
+          class="my-3"
+          contain
+          height="200"
+        ></v-img>
+
       </v-flex>
 
       <v-flex mb-4>
@@ -147,7 +155,7 @@ export default class HelloWorld extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss">
 h3 {
   margin: 40px 0 0;
 }

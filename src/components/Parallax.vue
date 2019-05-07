@@ -15,6 +15,7 @@
     div.layer.l_6
       div.image
 
+    AboutMe
     div.content
       section.center
         slot
@@ -22,11 +23,16 @@
 
 <script lang="ts">
   import { Vue, Prop, Component } from 'vue-property-decorator'
+  import AboutMe from '@/components/AboutMe.vue'
 
-  @Component
+  @Component({
+    components: {
+      AboutMe
+    }
+  })
   export default class Parallax extends Vue {
-    @Prop([String, Boolean])
-    public readonly isDisable!: boolean | string
+    @Prop(Boolean)
+    public readonly isDisable!: boolean
 
     public created () {
       console.log(1, this.isDisable)
@@ -65,7 +71,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      margin-left: -7px;
+      /* margin-left: -7px; */
 
       .stars{
         &:before{
@@ -136,7 +142,7 @@
     $x: ($parallax__layers - $i) / 2;
     $z: (-100 * $x)+px;
     .parallax .layer.l_#{$i}{
-      transform: translateZ($z) scale($x + 1);
+      transform: translateZ($z) scale($x + 1.03);
     }
   }
 </style>
