@@ -4,24 +4,25 @@
       v-flex(xs12 md12)
         v-avatar(size="192")
           img(v-if="data.avatar" :src="data.avatar" alt="Avatar")
-        h1 {{data.name}}
-        h2 {{data.title}}
 
-      // v-flex(xs12 md6)
-        h3 {{data.title}}
-        p {{data.description}}
+        EffectTyping(:pause="2000", :rotate="data.names", :isInfinity="false") {{data.h1}}
+        h2 {{data.title}}
 </template>
 
 <script lang="ts">
   import { Vue, Component } from 'vue-property-decorator'
+  import EffectTyping from '@/components/EffectTyping.vue'
 
-  @Component
+  @Component({
+    components: { EffectTyping }
+  })
   export default class AboutMe extends Vue {
 
     public data = {
       avatar: require('../assets/avatar.jpeg'),
-      name: 'Hey, my name is Damir',
+      h1: 'Hey, my name is ',
       title: 'Do you want a site for business?',
+      names: ['...', 'Yesworld', 'Damir']
     }
   }
 </script>
