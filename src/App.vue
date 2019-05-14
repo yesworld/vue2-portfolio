@@ -57,4 +57,9 @@
     /*background: radial-gradient(ellipse at bottom, #fedcc8 50%, #2c3669 100%);*/
     background: linear-gradient(#0D47A1 0%, #90CAF9 51%);
   }
+
+  .container {
+    padding: 24px 0;
+    position: relative;
+  }
 </style>

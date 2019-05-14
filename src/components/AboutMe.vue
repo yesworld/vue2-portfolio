@@ -1,34 +1,50 @@
 <template lang="pug">
   v-container(fill-height)
-    v-layout(text-xs-center wrap  align-center justify-center)
-      v-flex(xs12 md12)
-        v-avatar(size="192")
-          img(v-if="data.avatar" :src="data.avatar" alt="Avatar")
+    v-layout(wrap)
+      v-flex.mb-5(xs12 md12)
+        p I am a full stack web-developer who has successful 10 years of experience.
+        | Always passionate to use latest technologies for your projects,
+        | focusing on quality than speed on everything I am doing.
+        | I love to get on challenging projects. Also I can just improve your website in all ways,
+        | and analyze databases for further optimization.
 
-        EffectTyping(:pause="2000", :rotate="data.names", :isInfinity="false") {{data.h1}}
-        h2 {{data.title}}
+      v-flex.text-xs-center(xs12 md12)
+        h5.text--accent My skills
+
+        v-chip(color="red" text-color="white")
+          v-avatar.red.darken-2 5.0
+          | Technical SEO
+
+        v-chip(color="indigo" text-color="white")
+          v-avatar.indigo.darken-2 4.7
+          | PHP
+
+        v-chip(color="grey" text-color="white")
+          v-avatar.grey.darken-2 4.2
+          | Node.js
+
+        v-chip.darken-2(color="yellow" text-color="black")
+          v-avatar.yellow.darken-3 4.8
+          | JavaScript
+
+        v-chip(color="blue" text-color="white")
+          v-avatar.blue.darken-2 3.1
+          | TypeScript
+
+        v-chip.darken-2(color="orange" text-color="white")
+          v-avatar.orange.darken-4 4.3
+          | MySql
+
+        v-chip(color="green" text-color="white")
+          v-avatar.green.darken-2 4.0
+          | MongoDB
 </template>
 
 <script lang="ts">
   import { Vue, Component } from 'vue-property-decorator'
-  import EffectTyping from '@/components/EffectTyping.vue'
 
-  @Component({
-    components: { EffectTyping }
-  })
+  @Component
   export default class AboutMe extends Vue {
 
-    public data = {
-      avatar: require('../assets/avatar.jpeg'),
-      h1: 'Hey, my name is ',
-      title: 'Do you want a site for business?',
-      names: ['...', 'Yesworld', 'Damir']
-    }
   }
 </script>
-
-<style lang="scss">
-.container{
-  position: relative;
-}
-</style>

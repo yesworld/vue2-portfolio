@@ -2,11 +2,12 @@ import { DirectiveBinding } from 'vue/types/options'
 import { DirectiveOptions } from 'vue'
 
 const directive: DirectiveOptions = {
-  inserted(el: HTMLElement, bind: DirectiveBinding) {
 
-    let parallax = document.getElementsByClassName('parallax')[0]
+  inserted (el: HTMLElement, bind: DirectiveBinding) {
 
-    let f = (evt: Event) => {
+    const parallax = document.getElementsByClassName('parallax')[0]
+
+    const f = (evt: Event) => {
       if (bind.value(evt, el)) {
         parallax.removeEventListener('scroll', f)
       }

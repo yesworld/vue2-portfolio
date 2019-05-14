@@ -1,5 +1,5 @@
 <template lang="pug">
-  h1
+  h2
     slot
     span {{text}}
 </template>
@@ -29,6 +29,9 @@
       this.start()
     }
 
+    /**
+     * todo: REFACTOR!
+     */
     private start () {
 
       const indexArray = this.counter % this.rotate.length
@@ -66,7 +69,7 @@
 </script>
 
 <style lang="scss" scoped>
-  h1 > span {
+  span {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */

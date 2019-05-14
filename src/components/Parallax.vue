@@ -15,7 +15,7 @@
     div.layer.l_6
       div.image
 
-    AboutMe
+    Avatar
     div.content
       section.center
         slot
@@ -23,11 +23,11 @@
 
 <script lang="ts">
   import { Vue, Prop, Component } from 'vue-property-decorator'
-  import AboutMe from '@/components/AboutMe.vue'
+  import Avatar from '@/components/Avatar.vue'
 
   @Component({
     components: {
-      AboutMe
+      Avatar
     }
   })
   export default class Parallax extends Vue {
@@ -126,7 +126,7 @@
       padding-top: 40px;
 
       section.center {
-        width: 600px;
+        max-width: 600px;
         margin: 0 auto;
       }
     }
