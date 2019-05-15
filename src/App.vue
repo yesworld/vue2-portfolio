@@ -2,7 +2,7 @@
   v-app(dark)
 
     v-content
-      Parallax(:isDisable="true")
+      Parallax(:isDisable="false")
         router-view
 </template>
 
@@ -52,7 +52,6 @@
   }
 
   .container {
-    /*padding: 24px 0;*/
     position: relative;
   }
 </style>

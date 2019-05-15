@@ -7,13 +7,6 @@
         h3.text-xs-center Do you have an idea?
         section(v-if="isShowIdea")
           HaveIdea
-
-    //v-layout()
-      h3 vvvvvvvvvvvvvvvvvvvvvvv
-      v-flex(xs12 md6)
-        p(style="opacity: 0;") efwef f fwfwf wfwe fw efwef f fwfwf wfwe fw efwef f fwfwf wfwe f
-      v-flex(xs12 md6)
-        p efwef f fwfwf wfwe fw efwef f fwfwf wfwe fw efwef f fwfwf wfwe fw
 </template>
 
 <script lang="ts">
@@ -34,9 +27,6 @@
   export default class Home extends Vue {
 
     public isShowIdea = false
-
-    public mounted () {
-    }
 
     public handleScroll (evt: any, el: HTMLElement): boolean {
 

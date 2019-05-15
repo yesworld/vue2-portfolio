@@ -33,14 +33,6 @@
   export default class Parallax extends Vue {
     @Prop(Boolean)
     public readonly isDisable!: boolean
-
-    public created () {
-      console.log(1, this.isDisable)
-    }
-
-    public mounted () {
-      console.log(2, this.isDisable)
-    }
   }
 </script>
 
@@ -120,7 +112,7 @@
       top: 100%;
       left: 0;
       right: 0;
-      height: 2000px;
+      min-height: 1040px;
       z-index: 1000;
       margin-top: -1px;
       padding-top: 40px;

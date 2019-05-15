@@ -26,7 +26,6 @@
             v-slider(v-model="B" :max="255" label="Blue")
           v-flex(xs3)
             v-text-field(v-model="B" type="number")
-
 </template>
 
 <script lang="ts">
@@ -40,7 +39,7 @@
 
     get style () {
       const color = `${this.R},${this.G},${this.B}`
-      const light = `rgba(255,0,0,1) 0%,rgba(${color},1) 3%, rgba(${color},0.9) 1%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);`
+      const light = `rgba(255,0,0,1) 0%,rgba(${color},1) 3%, rgba(${color},0.8) 1%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);`
 
       const styleW = 'background:-webkit-radial-gradient(center,ellipse,' + light
       const styleO = 'background:-o-radial-gradient(center,ellipse,' + light
