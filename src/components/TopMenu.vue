@@ -2,6 +2,17 @@
   div#nav
     router-link(to="/") Home |
     router-link(to="/about") About
+
+    //
+      v-toolbar(app)
+        v-toolbar-title.headline.text-uppercase
+          span.mr-2 Vuetify
+          span.font-weight-light MATERIAL DESIGN
+
+        v-spacer
+
+        v-btn(flat href="#" target="_blank")
+          span.mr-2 Latest Release
 </template>
 
 <script lang="ts">

@@ -17,7 +17,7 @@
 
     Avatar
     div.content
-      section.center
+      div.center
         slot
 </template>
 
@@ -125,8 +125,8 @@
       margin-top: -1px;
       padding-top: 40px;
 
-      section.center {
-        max-width: 600px;
+      .center {
+        max-width: 650px;
         margin: 0 auto;
       }
     }

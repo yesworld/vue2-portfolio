@@ -1,15 +1,5 @@
 <template lang="pug">
   v-app(dark)
-    //
-      v-toolbar(app)
-        v-toolbar-title.headline.text-uppercase
-          span.mr-2 Vuetify
-          span.font-weight-light MATERIAL DESIGN
-
-        v-spacer
-
-        v-btn(flat href="#" target="_blank")
-          span.mr-2 Latest Release
 
     v-content
       Parallax(:isDisable="true")
@@ -18,12 +8,11 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator'
-  import TopMenu from '@/components/TopMenu.vue'
   import Parallax from '@/components/Parallax.vue'
 
   @Component({
     components: {
-      TopMenu, Parallax
+      Parallax
     }
   })
   export default class App extends Vue {}
@@ -58,8 +47,12 @@
     background: linear-gradient(#0D47A1 0%, #90CAF9 51%);
   }
 
+  .relative {
+    position: relative;
+  }
+
   .container {
-    padding: 24px 0;
+    /*padding: 24px 0;*/
     position: relative;
   }
 </style>
