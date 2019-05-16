@@ -24,6 +24,8 @@
     "object-literal-sort-keys": false,
     "no-consecutive-blank-lines": false,
     "semicolon": [true, "never"],
-    "no-inferrable-types": true
+    "no-inferrable-types": true,
+    "no-floating-promises": false,
+    "no-unnecessary-qualifier": false
   }
 }

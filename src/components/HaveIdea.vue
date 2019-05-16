@@ -29,25 +29,25 @@
 </template>
 
 <script lang="ts">
-  import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component } from 'vue-property-decorator'
 
-  @Component
-  export default class HaveIdea extends Vue {
-    public R = 255
-    public G = 255
-    public B = 100
+@Component
+export default class HaveIdea extends Vue {
+  public R = 255
+  public G = 255
+  public B = 100
 
-    get style () {
-      const color = `${this.R},${this.G},${this.B}`
-      const light = `rgba(255,0,0,1) 0%,rgba(${color},1) 3%, rgba(${color},0.8) 1%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);`
+  get style () {
+    const color = `${this.R},${this.G},${this.B}`
+    const light = `rgba(255,0,0,1) 0%,rgba(${color},1) 3%, rgba(${color},0.8) 1%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 100%);`
 
-      const styleW = 'background:-webkit-radial-gradient(center,ellipse,' + light
-      const styleO = 'background:-o-radial-gradient(center,ellipse,' + light
-      const style = 'background:radial-gradient(ellipse at center,' + light
+    const styleW = 'background:-webkit-radial-gradient(center,ellipse,' + light
+    const styleO = 'background:-o-radial-gradient(center,ellipse,' + light
+    const style = 'background:radial-gradient(ellipse at center,' + light
 
-      return styleW + styleO + style
-    }
+    return styleW + styleO + style
   }
+}
 </script>
 
 <style lang="scss">

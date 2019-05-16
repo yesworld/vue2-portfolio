@@ -1,28 +1,14 @@
 # portfolio
 
-## Project setup
+## How to run?
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
+$ yarn install
+$ yarn run serve
 ```
 
 ### Compiles and minifies for production
 ```
 yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
 ```
 
 ### How I deployed the project on github? 
@@ -47,5 +33,8 @@ yarn add gh-pages -D
 }
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## License
+
+[MIT License](./LICENSE)
+
+Copyright (c) @yesworld

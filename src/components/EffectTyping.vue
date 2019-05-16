@@ -5,67 +5,67 @@
 </template>
 
 <script lang="ts">
-  import { Vue, Prop, Component } from 'vue-property-decorator'
+import { Vue, Prop, Component } from 'vue-property-decorator'
 
-  @Component
-  export default class EffectTyping extends Vue {
+@Component
+export default class EffectTyping extends Vue {
 
-    @Prop({ default: true })
-    private readonly isInfinity!: boolean
+  @Prop({ default: true })
+  private readonly isInfinity!: boolean
 
-    @Prop({ default: [] })
-    private readonly rotate!: string[]
+  @Prop({ default: [] })
+  private readonly rotate!: string[]
 
-    @Prop({ default: 2000 })
-    private readonly pause!: number
+  @Prop({ default: 2000 })
+  private readonly pause!: number
 
-    private isDelete = false
-    private counter = 0
-    private text = ''
+  private isDelete = false
+  private counter = 0
+  private text = ''
 
-    private mounted () {
-      if (!this.rotate.length) return
+  private mounted () {
+    if (!this.rotate.length) return
 
-      this.start()
-    }
+    this.start()
+  }
 
-    /**
-     * todo: REFACTOR!
-     */
-    private start () {
+  /**
+   * todo: REFACTOR!
+   */
+  private start (): void {
 
-      const indexArray = this.counter % this.rotate.length
-      const textFull = this.rotate[indexArray]
+    const indexArray = this.counter % this.rotate.length
+    const textFull = this.rotate[indexArray]
 
-      let length = this.text.length
-      length += this.isDelete ? -1 : +1
-      this.text = textFull.substring(0, length)
+    let length = this.text.length
+    length += this.isDelete ? -1 : +1
+    this.text = textFull.substring(0, length)
 
-      let ms = 300 - Math.random() * 100
+    let ms = 300 - Math.random() * 100
 
-      if (this.isDelete) {
-        ms /= 2
-        if (this.text === '') {
-          this.isDelete = false
-          this.counter++
-          ms = 500 // pause before start
-        }
-      } else if (!this.isDelete && this.text === textFull) {
+    if (this.isDelete) {
+      ms /= 2
+      if (this.text === '') {
+        this.isDelete = false
+        this.counter++
+        ms = 500 // pause before start
+      }
+    } else if (!this.isDelete && this.text === textFull) {
 
-        // infinity animation or not
-        if (!this.isInfinity && this.counter + 1 === this.rotate.length) {
-          return
-        }
-
-        ms = Math.floor(this.pause)
-        this.isDelete = true
+      // infinity animation or not
+      if (!this.isInfinity && this.counter + 1 === this.rotate.length) {
+        return
       }
 
-      setTimeout(() => {
-        this.start()
-      }, Math.floor(ms))
+      ms = Math.floor(this.pause)
+      this.isDelete = true
     }
+
+    setTimeout(() => {
+      this.start()
+    }, Math.floor(ms))
   }
+}
 </script>
 
 <style lang="scss" scoped>

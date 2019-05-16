@@ -22,18 +22,18 @@
 </template>
 
 <script lang="ts">
-  import { Vue, Prop, Component } from 'vue-property-decorator'
-  import Avatar from '@/components/Avatar.vue'
+import { Vue, Prop, Component } from 'vue-property-decorator'
+import Avatar from '@/components/Avatar.vue'
 
-  @Component({
-    components: {
-      Avatar
-    }
-  })
-  export default class Parallax extends Vue {
-    @Prop(Boolean)
-    public readonly isDisable!: boolean
+@Component({
+  components: {
+    Avatar
   }
+})
+export default class Parallax extends Vue {
+  @Prop(Boolean)
+  public readonly isDisable!: boolean
+}
 </script>
 
 <style lang="scss">
@@ -55,7 +55,6 @@
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    z-index: -1; /* The magic of fixed parallax header*/
 
     .layer{
       position: absolute;

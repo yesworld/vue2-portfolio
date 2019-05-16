@@ -7,15 +7,15 @@
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator'
-  import Parallax from '@/components/Parallax.vue'
+import { Component, Vue } from 'vue-property-decorator'
+import Parallax from '@/components/Parallax.vue'
 
-  @Component({
-    components: {
-      Parallax
-    }
-  })
-  export default class App extends Vue {}
+@Component({
+  components: {
+    Parallax
+  }
+})
+export default class App extends Vue {}
 </script>
 
 <style lang="scss">

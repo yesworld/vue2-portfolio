@@ -1,9 +1,9 @@
 <template lang="pug">
   v-container(fill-height)
-    v-layout(text-xs-center wrap align-center justify-center)
-      v-flex(xs12 md12)
+    v-layout(text-xs-center align-center justify-center)
+      v-flex(xs12)
         v-avatar(size="192")
-          img(v-if="data.avatar" :src="data.avatar" alt="my photo yesworld")
+          img(v-if="data.avatar" :src="data.avatar" alt="photo yesworld")
 
         h1 {{data.h1}}
         EffectTyping(:pause="2000", :rotate="data.rotate", :isInfinity="false") {{data.title}}
@@ -20,10 +20,9 @@
 
     public data = {
       avatar: require('../assets/avatar.jpeg'),
-      h1: 'Hey, my name is Damir. I\'m a freelancer.',
-      title: 'Do you want a site for ',
-      rotate: ['business?', 'e-shop?', 'a big project?']
+      h1: 'Hey! I\'m Damir.',
+      title: 'I\'ll create a top-notch website for your ',
+      rotate: ['business?', 'e-shop?', 'big project?']
     }
   }
 </script>
-
