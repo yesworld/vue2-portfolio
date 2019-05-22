@@ -22,7 +22,7 @@
       avatar: require('../assets/avatar.jpeg'),
       h1: 'Hey! I\'m Damir.',
       title: 'I\'ll create a top-notch website for your ',
-      rotate: ['business?', 'e-shop?', 'big project?']
+      rotate: ['business!', 'e-shop!', 'big project!']
     }
   }
 </script>

@@ -24,6 +24,7 @@ import scroll from '../scroll-directive'
     scroll
   }
 })
+// @Component
 export default class Home extends Vue {
 
   public isShowIdea = false
@@ -31,7 +32,7 @@ export default class Home extends Vue {
   public handleScroll (evt: any, el: HTMLElement): boolean {
 
     const scrollTop: number = evt.currentTarget.scrollTop
-    const topElement = el.offsetTop + el.offsetHeight
+    const topElement: number = el.offsetTop + el.offsetHeight
 
     if (scrollTop > topElement) {
       this.isShowIdea = true
