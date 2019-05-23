@@ -7,24 +7,19 @@
         h3.text-xs-center Do you have an idea?
         section(v-if="isShowIdea")
           HaveIdea
+        p My top priority is the quality of the final product, that's why I always keep the client posted on project status and discuss all possible issues that may occur in the future.
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-
 import AboutMe from '@/components/AboutMe.vue'
-import scroll from '../scroll-directive'
 
 @Component({
   components: {
     AboutMe,
     HaveIdea: () => import('@/components/HaveIdea.vue') // lazy
-  },
-  directives: {
-    scroll
   }
 })
-// @Component
 export default class Home extends Vue {
 
   public isShowIdea = false
