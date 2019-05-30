@@ -16,7 +16,7 @@
       div.image
 
     Avatar
-    div.content
+    div.content(v-scroll="handleScroll")
       div.center
         slot
 </template>
@@ -31,8 +31,16 @@ import Avatar from '@/components/Avatar.vue'
   }
 })
 export default class Parallax extends Vue {
-  @Prop(Boolean)
-  public readonly isDisable!: boolean
+
+  public isDisable = false
+
+  public handleScroll (evt: any, el: HTMLElement): void {
+
+    const scrollTop: number = evt.currentTarget.scrollTop
+    const topElement: number = el.offsetTop + 50
+    this.isDisable = scrollTop > topElement ? true : false
+    this.$emit('show-menu', this.isDisable)
+  }
 }
 </script>
 

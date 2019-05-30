@@ -1,8 +1,8 @@
 <template lang="pug">
   v-app(dark)
 
-    v-content
-      Parallax(:isDisable="false")
+    v-content.main-content
+      Parallax(v-on:show-menu="displayMenu")
         router-view
 </template>
 
@@ -15,7 +15,14 @@ import Parallax from '@/components/Parallax.vue'
     Parallax
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+
+  private isShow = false
+
+  private displayMenu (isShowMenu: boolean) {
+    this.isShow = isShowMenu
+  }
+}
 </script>
 
 <style lang="scss">
@@ -42,7 +49,7 @@ export default class App extends Vue {}
     font-size: 22px;
   }
 
-  .theme--dark.application{
+  .theme--dark.application {
     /*background: radial-gradient(ellipse at bottom, #fedcc8 50%, #2c3669 100%);*/
     background: linear-gradient(#0D47A1 0%, #90CAF9 51%);
   }

@@ -51,7 +51,7 @@ export default class AboutMe extends Vue {
   public handleScroll (evt: any, el: HTMLElement): boolean {
 
     const scrollTop: number = evt.currentTarget.scrollTop
-    const topElement: number = el.offsetTop + 200
+    const topElement: number = el.offsetTop + 400
 
     if (scrollTop > topElement) {
       this.show = true
