@@ -11,6 +11,10 @@ $ yarn run serve
 yarn run build
 ```
 
+#### TODO - create own directive?
+1. https://stackoverflow.com/questions/45257308/how-to-display-and-transition-when-scroll-position-reaches-element-position-in-t
+2. https://stackoverflow.com/questions/47491109/vue-js-transition-to-appear-occur-on-element-entering-viewport/47494016#47494016
+
 ### How I deployed the project on github? 
 1. Create a file config `vue.config.js` with the following code:
 ```javascript

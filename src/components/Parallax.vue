@@ -63,6 +63,7 @@ export default class Parallax extends Vue {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    //height: calc(100vh + 64px);
 
     .layer{
       position: absolute;

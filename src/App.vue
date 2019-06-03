@@ -1,18 +1,21 @@
 <template lang="pug">
   v-app(dark)
+    //TopMenu(v-if="!isShow")
 
     v-content.main-content
       Parallax(v-on:show-menu="displayMenu")
         router-view
+
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Parallax from '@/components/Parallax.vue'
+//import TopMenu from '@/components/TopMenu.vue'
 
 @Component({
   components: {
-    Parallax
+    Parallax//, TopMenu
   }
 })
 export default class App extends Vue {
@@ -52,6 +55,12 @@ export default class App extends Vue {
   .theme--dark.application {
     /*background: radial-gradient(ellipse at bottom, #fedcc8 50%, #2c3669 100%);*/
     background: linear-gradient(#0D47A1 0%, #90CAF9 51%);
+
+    /*
+    .main-content {
+      padding: 0 !important;
+      margin-top: -64px;
+    }*/
   }
 
   .relative {
